@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="description" content="Ein Spiel ähnlich zu InfiniteCraft nur mit Chemieschen Elementen">
     <link rel="stylesheet" href="style.css">
+    <script href="jquery-3.7.1.min.js"></script>
+    <script href="jquery-ui-1.13.3/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="jquery-ui-1.13.3/jquery-ui.min.css">
+    <script href="game.js"></script>
     <title>ChemCraft</title>
     <style>
         header {
@@ -15,14 +19,23 @@
             width: 60%;
             margin-top: 30px;
         }
+        
+        body{
+            background: 
+            linear-gradient(rgba(255, 255, 255, 0.904), rgba(255, 255, 255, 0.808)), url("Periodensystem.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;   }
     </style>
 </head>
-<body id="main">
+<body>
     <header>
         <img src="Chemcraft.png" alt="Ein Spiel ähnlich zu InfiniteCraft nur mit Chemieschen Elementen">
     </header>
     <div class="container">
-        <button href="game.html">Clicke hier um zu Starten</button>
+        <a href="game.html">
+        <button class="ui-button ui-corner-all ui-widget">Clicke hier um zu Starten</button>
+        </a>
     </div>
 </body>
 </html>
