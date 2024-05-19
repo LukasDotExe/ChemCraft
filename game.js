@@ -34,7 +34,7 @@ $(function() {
             });
         }
     
-        $("#button-c").click(function() {
+        $("#btn-c").click(function() {
             makeDrag(addImage());
         });
     });
