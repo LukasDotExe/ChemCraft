@@ -1,25 +1,7 @@
-h1{
+body {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
   text-align: center;
 }
-
-body {
-  background: 
-      linear-gradient(rgba(255, 255, 255, 0.904), rgba(255, 255, 255, 0.808)), 
-      url("Periodensystem.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-} 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  margin-top: 250px ;
-  }
