@@ -5,7 +5,7 @@ $(function() {
             Output: jQuery Object of IMG element
             ***/
             if (u == undefined) {
-                u = "https://bricksplayground.webs.com/brick.PNG";
+                u = "Chemcraft.png";
             }
             if (c == undefined) {
                 c == "";
@@ -18,7 +18,7 @@ $(function() {
                 class: c,
             }).css({
                 width: "50px",
-                height: "100px"
+                height: "50px"
             });
             img.appendTo(t);
             return img;
@@ -35,6 +35,6 @@ $(function() {
         }
     
         $("#button-c").click(function() {
-            makeDrag(addImage("https://png.pngtree.com/png_detail/20181008/red-brick-wall-png-clipart_1564742.png", "foo"));
+            makeDrag(addImage());
         });
     });
