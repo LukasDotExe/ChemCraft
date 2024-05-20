@@ -1,5 +1,5 @@
 $(function() {
-        function addImage(u, c, t) {
+        function addImage(u, c, t, x, y) {
             /***
             Input: URL, Class, Target Object
             Output: jQuery Object of IMG element
@@ -13,16 +13,22 @@ $(function() {
             if (t == undefined) {
                 t = $("#game-window");
             }
+            if (x == undefined) {
+                x = "100px"
+            }
+            if (y == undefined) {
+                y = "50px"
+            }
             var img = $("<img>", {
                 src: u,
                 class: c,
             }).css({
-                width: "50px",
-                height: "50px"
+                width: x,
+                height: y
             });
             img.appendTo(t);
             return img;
-        }
+        } 
     
         function makeDrag(o) {
             /***
@@ -30,11 +36,22 @@ $(function() {
             Output: null
             ***/
             o.draggable({
-                containment: "parent"
+                containment: "parent",
+                cursor: "grabbing"
+            });
+            o.droppable({
+                drop: function() {
+                    $(this).remove();
+                }
             });
         }
     
         $("#btn-c").click(function() {
-            makeDrag(addImage());
+            makeDrag(addImage("Chemcraft.png", "c atom", "#game-window", "100px", "37px"));
         });
+
+        $("#btn-h").click(function() {
+            makeDrag(addImage("Chemcraft.png", "h atom", "#game-window", "100px", "37px"));
+        });
+
     });
