@@ -17,7 +17,7 @@ $(function() {
                 x = "100px"
             }
             if (y == undefined) {
-                y = "50px"
+                y = "37px"
             }
             var img = $("<img>", {
                 src: u,
@@ -52,6 +52,18 @@ $(function() {
 
         $("#btn-h").click(function() {
             makeDrag(addImage("Chemcraft.png", "h atom", "#game-window", "100px", "37px"));
+        });
+
+        $("#btn-o").click(function() {
+            makeDrag(addImage("Chemcraft.png", "o atom", "#game-window", "100px", "37px"));
+        });
+
+        $("#btn-br").click(function() {
+            makeDrag(addImage("Chemcraft.png", "br atom", "#game-window", "100px", "37px"));
+        });
+
+        $("#btn-f").click(function() {
+            makeDrag(addImage("Chemcraft.png", "f atom", "#game-window", "100px", "37px"));
         });
 
     });
