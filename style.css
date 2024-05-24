@@ -46,7 +46,12 @@ button {
   position: absolute;
   top: 0px;
   left: 0px;
-  margin: 25px;
+  margin: 15px;
+}
+
+.back{
+  height: 50px;
+  width: 150px;
 }
 
 .atom{
