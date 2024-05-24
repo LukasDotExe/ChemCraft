@@ -60,3 +60,18 @@ button {
 .h{
   border-color: #ff0000;
 }
+
+.bottom{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  padding: 50px;
+  width: 100%;
+  background-color: hsla(0, 0%, 49%, 0.37);
+}
+
+.bottom a{
+  margin-right: 50px;
+  color:#000000;
+  text-decoration-color: #00000000;
+}
