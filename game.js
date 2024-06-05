@@ -5,7 +5,7 @@ $(function() {
             Output: jQuery Object of IMG element
             ***/
             if (u == undefined) {
-                u = "Chemcraft.png";
+                u = "img/Chemcraft.png";
             }
             if (c == undefined) {
                 c == "";
@@ -17,7 +17,7 @@ $(function() {
                 x = "100px"
             }
             if (y == undefined) {
-                y = "37px"
+                y = "125px"
             }
             var img = $("<img>", {
                 src: u,
@@ -46,24 +46,8 @@ $(function() {
             });
         }
     
-        $("#btn-c").click(function() {
-            makeDrag(addImage("Chemcraft.png", "c atom", "#game-window", "100px", "37px"));
-        });
-
-        $("#btn-h").click(function() {
-            makeDrag(addImage("Chemcraft.png", "h atom", "#game-window", "100px", "37px"));
-        });
-
-        $("#btn-o").click(function() {
-            makeDrag(addImage("Chemcraft.png", "o atom", "#game-window", "100px", "37px"));
-        });
-
-        $("#btn-br").click(function() {
-            makeDrag(addImage("Chemcraft.png", "br atom", "#game-window", "100px", "37px"));
-        });
-
-        $("#btn-f").click(function() {
-            makeDrag(addImage("Chemcraft.png", "f atom", "#game-window", "100px", "37px"));
+        $("#btn-li").click(function() {
+            makeDrag(addImage("img/elements/Li.png", "li atom", "#game-window", "100px", "125px"));
         });
 
     });

@@ -27,10 +27,15 @@ button {
   font-size: 16px;
   }
 
-#add-elements button {
-  margin: 10px;
-  width:210px;
-  height: 30px;
+.ebtn{
+  width: 100px;
+  height: 125px;
+  margin: 20px;
+  margin-right: 0px;
+}
+
+.atom{
+  margin: 20px;
 }
 
 #game-window{
@@ -38,7 +43,7 @@ button {
   top: 80px;
   left: 0;
   width: 100%;
-  height: 80%;
+  height: 72%;
   /*border: 3px solid #000000;*/
 }
 
@@ -52,18 +57,6 @@ button {
 .back{
   height: 50px;
   width: 393px;
-}
-
-.atom{
-  Border: 2px solid #000000
-}
-
-.c{
-  border-color: #000000;
-}
-
-.h{
-  border-color: #ff0000;
 }
 
 .bottom{
