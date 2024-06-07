@@ -8,6 +8,11 @@ $(function() {
         var py = 5;
         var zi = 0;
 
+        function rstPos(){
+            px = 5;
+            py = 5;
+        }
+
         function posx(){
             px = px + 13;
             if (px > 90) {
@@ -64,6 +69,7 @@ $(function() {
             container.removeEventListener('mouseup', onMouseUp);
             activeElement.classList.remove("dragging");
             checkCollision();
+            rstPos();
             activeElement = null;
         }
 
