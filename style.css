@@ -75,10 +75,78 @@ button {
   background-size: cover;
 }
 
+.NaCl {
+  background-image: url("img/molecules/NaCl.png");
+  background-size: cover;
+}
+
+.NaBr {
+  background-image: url("img/molecules/NaBr.png");
+  background-size: cover;
+}
+
+.NaI {
+  background-image: url("img/molecules/NaI.png");
+  background-size: cover;
+}
+
+.NaF {
+  background-image: url("img/molecules/NaF.png");
+  background-size: cover;
+}
+
+.LiCl {
+  background-image: url("img/molecules/LiCl.png");
+  background-size: cover;
+}
+
+.LiBr {
+  background-image: url("img/molecules/LiBr.png");
+  background-size: cover;
+}
+
+.LiI {
+  background-image: url("img/molecules/LiI.png");
+  background-size: cover;
+}
+
+.LiF {
+  background-image: url("img/molecules/LiF.png");
+  background-size: cover;
+}
+
+.KCl {
+  background-image: url("img/molecules/KCl.png");
+  background-size: cover;
+}
+
+.KBr {
+  background-image: url("img/molecules/KBr.png");
+  background-size: cover;
+}
+
+.KI {
+  background-image: url("img/molecules/KI.png");
+  background-size: cover;
+}
+
+.KF {
+  background-image: url("img/molecules/KF.png");
+  background-size: cover;
+}
+
 .atom{
   margin: 20px;
   height: 125px;
   width: 100px;
+  color: transparent;
+  user-select: none;
+}
+
+.molecule{
+  margin: 20px;
+  height: 100px;
+  width: 125px;
   color: transparent;
   user-select: none;
 }

@@ -74,9 +74,9 @@ $(function() {
                 const rect1 = activeElement.getBoundingClientRect();
                 const rect2 = element.getBoundingClientRect();
                 if (!(rect1.right < rect2.left ||
-                      rect1.left > rect2.right ||
-                      rect1.bottom < rect2.top ||
-                      rect1.top > rect2.bottom)) {
+                        rect1.left > rect2.right ||
+                        rect1.bottom < rect2.top ||
+                        rect1.top > rect2.bottom)) {
                     combineElements(activeElement, element);
                 }
             });
@@ -84,10 +84,18 @@ $(function() {
 
         function combineElements(el1, el2) {
             const combinations = {
-                'ClNa': 'NaCl',
-                'NaCl': 'NaCl',
-                'KBr': 'KBr',
-                'BrK': 'KBr'
+                'ClNa': 'NaCl', 'NaCl': 'NaCl',
+                "FNa": "NaF", "NaF": "NaF",
+                "BrNa": "NaBr", "NaBr": "NaBr",
+                "INa": "NaI", "NaI": "NaI",
+                'KBr': 'KBr', 'BrK': 'KBr',
+                "ClK": "KCl", "KCl":"KCl",
+                "IK": "KI", "KI": "KI",
+                "FK": "KF", "KF": "KF",
+                "FLi": "LiF", "LiF": "LiF",
+                "ILi": "LiI", "LiI": "LiI",
+                "BrLi": "LiBr", "LiBr": "LiBr",
+                "ClLi": "LiCl", "LiCl": "LiCl"
             };
             const key = el1.textContent + el2.textContent;
             const combination = combinations[key];
@@ -96,10 +104,10 @@ $(function() {
                 molecule.classList.add('draggable');
                 molecule.textContent = combination;
                 molecule.classList.add(combination);
+                molecule.classList.add("molecule");
                 molecule.style.position = 'absolute';
                 molecule.style.left = `${(parseInt(el1.style.left) + parseInt(el2.style.left)) / 2}px`;
                 molecule.style.top = `${(parseInt(el1.style.top) + parseInt(el2.style.top)) / 2}px`;
-                molecule.style.backgroundColor = 'orange';
                 container.appendChild(molecule);
                 container.removeChild(el1);
                 container.removeChild(el2);
