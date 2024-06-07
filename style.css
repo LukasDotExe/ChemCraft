@@ -12,6 +12,8 @@ h1 {
   right: 00px;
   left: 00px;
   border-top : 3px solid #000000;
+  display: flex;
+  justify-content: space-around;
 }
 
 .container {
@@ -27,13 +29,6 @@ button {
   font-size: 16px;
   }
 
-.ebtn{
-  width: 100px;
-  height: 125px;
-  margin: 20px;
-  margin-right: 0px;
-}
-
 .draggable {
   width: 100px;
   height: 125px;
@@ -41,43 +36,47 @@ button {
   cursor: pointer;
 }
 
-.atom.br {
+.br {
   background-image: url("img/elements/Br.png");
   background-size: cover;
 }
 
-.atom.cl {
+.cl {
   background-image: url("img/elements/Cl.png");
   background-size: cover;
 }
 
-.atom.f {
+.f {
   background-image: url("img/elements/F.png");
   background-size: cover;
 }
 
-.atom.i {
+.i {
   background-image: url("img/elements/I.png");
   background-size: cover;
 }
 
-.atom.k {
+.k {
   background-image: url("img/elements/K.png");
   background-size: cover;
 }
 
-.atom.li {
+.li {
   background-image: url("img/elements/Li.png");
   background-size: cover;
 }
 
-.atom.na {
+.na {
   background-image: url("img/elements/Na.png");
   background-size: cover;
 }
 
 .atom{
   margin: 20px;
+  height: 125px;
+  width: 100px;
+  color: transparent;
+  user-select: none;
 }
 
 #game-window{

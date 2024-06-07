@@ -1,67 +1,32 @@
 $(function() {
-        function addObj(i, c, t, x, y) {
-            /***
-            Input: URL, Class, Target Object
-            Output: jQuery Object of IMG element
-            ***/
-            var div = $("<div>", {
-                id: i,
-                class : "draggable " + c
-            }).css({
-                width: x,
-                height: y
+        const container = document.getElementById('game-window');
+        const elements = document.querySelectorAll(".atom");
+        let activeElement = null;
+        let molecules = [];
+        var posx;
+        var posy;
+        function posx(){
+
+        }
+        function posy(){
+            
+        }
+
+        elements.forEach(element => {
+            element.addEventListener('click', () => {
+                const clone = element.cloneNode(true);
+                clone.classList.add('draggable');
+                clone.style.position = 'absolute';
+                clone.style.top = '5vh';
+                clone.style.left = '5vw';
+                container.appendChild(clone);
+                initDrag(clone);
             });
-            div.appendTo(t);
-            initEventListener(div);
-            return div;
-        }
+        });
 
-        var id1 = 0;
-
-        function genID() {
-            id1++;
-            return id1
-        }
-
-        function initEventListener(elementToInit){
+        function initDrag(elementToInit){
             elementToInit.addEventListener('mousedown', onMouseDown)
         }
-
-        $("#btn-li").click(function() {
-            addObj("obj" + genID(), "li atom", "#game-window", "100px", "125px");
-        });
-
-        $("#btn-na").click(function() {
-            addObj("obj" + genID(), "na atom", "#game-window", "100px", "125px");
-        });
-
-        $("#btn-k").click(function() {
-            addObj("obj" + genID(), "k atom", "#game-window", "100px", "125px");
-        });
-
-        $("#btn-cl").click(function() {
-            addObj("obj" + genID(), "cl atom", "#game-window", "100px", "125px");
-        });
-
-        $("#btn-f").click(function() {
-            addObj("obj" + genID(), "f atom", "#game-window", "100px", "125px");
-        });
-
-        $("#btn-br").click(function() {
-            addObj("obj" + genID(), "br atom", "#game-window", "100px", "125px");
-        });
-
-        $("#btn-i").click(function() {
-            addObj("obj" + genID(), "i atom", "#game-window", "100px", "125px");
-        });
-
-        const container = document.getElementById('game-window');
-        const obj1 = document.getElementById('obj1');
-        const obj2 = document.getElementById('obj2');
-        let activeElement = null;
-
-        obj1.addEventListener('mousedown', onMouseDown);
-        obj2.addEventListener('mousedown', onMouseDown);
 
         function onMouseDown(e) {
             activeElement = e.target;
@@ -86,20 +51,42 @@ $(function() {
         }
 
         function checkCollision() {
-            const rect1 = obj1.getBoundingClientRect();
-            const rect2 = obj2.getBoundingClientRect();
-
-            if (!(rect1.right < rect2.left ||
-                  rect1.left > rect2.right ||
-                  rect1.bottom < rect2.top ||
-                  rect1.top > rect2.bottom)) {
-                combineObjects();
-            }
+            const elements = container.querySelectorAll('.draggable');
+            elements.forEach(element => {
+                if (element === activeElement) return;
+                const rect1 = activeElement.getBoundingClientRect();
+                const rect2 = element.getBoundingClientRect();
+                if (!(rect1.right < rect2.left ||
+                      rect1.left > rect2.right ||
+                      rect1.bottom < rect2.top ||
+                      rect1.top > rect2.bottom)) {
+                    combineElements(activeElement, element);
+                }
+            });
         }
 
-        function combineObjects() {
-            // Hier kannst du definieren, wie die Objekte kombiniert werden sollen
-            obj1.style.backgroundColor = 'purple'; // Beispiel: Farbe ändern
-            obj2.style.display = 'none'; // Beispiel: Zweites Objekt verstecken
+        function combineElements(el1, el2) {
+            const combinations = {
+                'ClNa': 'NaCl',
+                'NaCl': 'NaCl',
+                'KBr': 'KBr',
+                'BrK': 'KBr'
+            };
+            const key = el1.textContent + el2.textContent;
+            const combination = combinations[key];
+            if (combination) {
+                const molecule = document.createElement('div');
+                molecule.classList.add('draggable');
+                molecule.textContent = combination;
+                molecule.style.position = 'absolute';
+                molecule.style.left = `${(parseInt(el1.style.left) + parseInt(el2.style.left)) / 2}px`;
+                molecule.style.top = `${(parseInt(el1.style.top) + parseInt(el2.style.top)) / 2}px`;
+                molecule.style.backgroundColor = 'orange';
+                container.appendChild(molecule);
+                container.removeChild(el1);
+                container.removeChild(el2);
+                enableDrag(molecule);
+                molecules.push(molecule);
+            }
         }
     });
