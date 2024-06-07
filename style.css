@@ -108,13 +108,15 @@ button {
   position: absolute;
   bottom: 0px;
   left: 0px;
-  padding: 50px;
-  width: 100%;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  width: 100vw;
   background-color: hsla(0, 0%, 49%, 0.37);
 }
 
 .bottom a{
-  margin-right: 50px;
+  margin-left: 50px;
+  width: 50vw;
   color:#000000;
   text-decoration-color: #00000000;
 }
