@@ -1,5 +1,5 @@
 $(function() {
-        function addObj(u, i, c, t, x, y) {
+        function addObj(i, c, t, x, y) {
             /***
             Input: URL, Class, Target Object
             Output: jQuery Object of IMG element
@@ -28,31 +28,31 @@ $(function() {
         }
 
         $("#btn-li").click(function() {
-            addObj("img/elements/Li.png", "obj" + genID(), "li atom", "#game-window", "100px", "125px");
+            addObj("obj" + genID(), "li atom", "#game-window", "100px", "125px");
         });
 
         $("#btn-na").click(function() {
-            addObj("img/elements/Na.png", "obj" + genID(), "na atom", "#game-window", "100px", "125px");
+            addObj("obj" + genID(), "na atom", "#game-window", "100px", "125px");
         });
 
         $("#btn-k").click(function() {
-            addObj("img/elements/K.png", "obj" + genID(), "k atom", "#game-window", "100px", "125px");
+            addObj("obj" + genID(), "k atom", "#game-window", "100px", "125px");
         });
 
         $("#btn-cl").click(function() {
-            addObj("img/elements/Cl.png", "obj" + genID(), "cl atom", "#game-window", "100px", "125px");
+            addObj("obj" + genID(), "cl atom", "#game-window", "100px", "125px");
         });
 
         $("#btn-f").click(function() {
-            addObj("img/elements/F.png", "obj" + genID(), "f atom", "#game-window", "100px", "125px");
+            addObj("obj" + genID(), "f atom", "#game-window", "100px", "125px");
         });
 
         $("#btn-br").click(function() {
-            addObj("img/elements/Br.png", "obj" + genID(), "br atom", "#game-window", "100px", "125px");
+            addObj("obj" + genID(), "br atom", "#game-window", "100px", "125px");
         });
 
         $("#btn-i").click(function() {
-            addObj("img/elements/I.png", "obj" + genID(), "i atom", "#game-window", "100px", "125px");
+            addObj("obj" + genID(), "i atom", "#game-window", "100px", "125px");
         });
 
         const container = document.getElementById('game-window');
