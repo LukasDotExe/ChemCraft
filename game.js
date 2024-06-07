@@ -28,8 +28,8 @@ $(function() {
             });
             img.appendTo(t);
             return img;
-        } 
-    
+        }
+
         function makeDrag(o) {
             /***
             Input: jQuery Object
@@ -45,7 +45,7 @@ $(function() {
                 }
             });
         }
-    
+
         $("#btn-li").click(function() {
             makeDrag(addImage("img/elements/Li.png", "li atom", "#game-window", "100px", "125px"));
         });
