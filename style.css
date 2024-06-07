@@ -34,16 +34,58 @@ button {
   margin-right: 0px;
 }
 
+.draggable {
+  width: 100px;
+  height: 125px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.atom.br {
+  background-image: url("img/elements/Br.png");
+  background-size: cover;
+}
+
+.atom.cl {
+  background-image: url("img/elements/Cl.png");
+  background-size: cover;
+}
+
+.atom.f {
+  background-image: url("img/elements/F.png");
+  background-size: cover;
+}
+
+.atom.i {
+  background-image: url("img/elements/I.png");
+  background-size: cover;
+}
+
+.atom.k {
+  background-image: url("img/elements/K.png");
+  background-size: cover;
+}
+
+.atom.li {
+  background-image: url("img/elements/Li.png");
+  background-size: cover;
+}
+
+.atom.na {
+  background-image: url("img/elements/Na.png");
+  background-size: cover;
+}
+
 .atom{
   margin: 20px;
 }
 
 #game-window{
-  position: fixed;
+  position: relative;
   top: 80px;
   left: 0;
   width: 100%;
-  height: 72%;
+  height: 68vh;
   /*border: 3px solid #000000;*/
 }
 
