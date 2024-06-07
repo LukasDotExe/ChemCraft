@@ -3,13 +3,19 @@ $(function() {
         const elements = document.querySelectorAll(".atom");
         let activeElement = null;
         let molecules = [];
-        var posx;
-        var posy;
-        function posx(){
 
+        var px = 5;
+        var py = 5;
+
+        function posx(){
+            px = px + 13;
+            if (px > 90) {
+                px = 5;
+                posy();
+            }
         }
         function posy(){
-            
+            py = py + 20;
         }
 
         elements.forEach(element => {
@@ -17,8 +23,9 @@ $(function() {
                 const clone = element.cloneNode(true);
                 clone.classList.add('draggable');
                 clone.style.position = 'absolute';
-                clone.style.top = '5vh';
-                clone.style.left = '5vw';
+                clone.style.top = `${py}vh`;
+                clone.style.left = `${px}vw`;
+                posx();
                 container.appendChild(clone);
                 initDrag(clone);
             });
@@ -78,6 +85,7 @@ $(function() {
                 const molecule = document.createElement('div');
                 molecule.classList.add('draggable');
                 molecule.textContent = combination;
+                molecule.classList.add(combination);
                 molecule.style.position = 'absolute';
                 molecule.style.left = `${(parseInt(el1.style.left) + parseInt(el2.style.left)) / 2}px`;
                 molecule.style.top = `${(parseInt(el1.style.top) + parseInt(el2.style.top)) / 2}px`;
@@ -85,8 +93,13 @@ $(function() {
                 container.appendChild(molecule);
                 container.removeChild(el1);
                 container.removeChild(el2);
-                enableDrag(molecule);
+                initDrag(molecule);
                 molecules.push(molecule);
+            }
+            else {
+                container.removeChild(el1);
+                container.removeChild(el2);
+                alert("Items can not be combined!");
             }
         }
     });
