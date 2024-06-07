@@ -39,6 +39,7 @@ $(function() {
             activeElement = e.target;
             container.addEventListener('mousemove', onMouseMove);
             container.addEventListener('mouseup', onMouseUp);
+            activeElement.classList.add("dragging");
         }
 
         function onMouseMove(e) {
@@ -53,6 +54,7 @@ $(function() {
         function onMouseUp(e) {
             container.removeEventListener('mousemove', onMouseMove);
             container.removeEventListener('mouseup', onMouseUp);
+            activeElement.classList.remove("dragging");
             checkCollision();
             activeElement = null;
         }
