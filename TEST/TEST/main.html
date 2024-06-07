@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #container {
+            width: 500px;
+            height: 500px;
+            position: relative;
+            border: 1px solid #000;
+        }
+        .draggable {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            cursor: pointer;
+        }
+        #obj1 {
+            background-color: red;
+            top: 50px;
+            left: 50px;
+        }
+        #obj2 {
+            background-color: blue;
+            top: 200px;
+            left: 200px;
+        }
+    </style>
+    <title>Drag and Drop Kombination</title>
+</head>
+<body>
+
+<div id="container">
+    <div id="obj1" class="draggable">Na</div>
+    <div id="obj2" class="draggable">Cl</div>
+</div>
+
+<script>
+    const container = document.getElementById('container');
+    const obj1 = document.getElementById('obj1');
+    const obj2 = document.getElementById('obj2');
+    let activeElement = null;
+
+    function onMouseDown(e) {
+        activeElement = e.target;
+        container.addEventListener('mousemove', onMouseMove);
+        container.addEventListener('mouseup', onMouseUp);
+    }
+
+    function onMouseMove(e) {
+        if (!activeElement) return;
+        const rect = container.getBoundingClientRect();
+        const x = e.clientX - rect.left - (activeElement.offsetWidth / 2);
+        const y = e.clientY - rect.top - (activeElement.offsetHeight / 2);
+        activeElement.style.left = `${x}px`;
+        activeElement.style.top = `${y}px`;
+    }
+
+    function onMouseUp(e) {
+        container.removeEventListener('mousemove', onMouseMove);
+        container.removeEventListener('mouseup', onMouseUp);
+        checkCollision();
+        activeElement = null;
+    }
+
+    function checkCollision() {
+        const rect1 = obj1.getBoundingClientRect();
+        const rect2 = obj2.getBoundingClientRect();
+
+        if (!(rect1.right < rect2.left ||
+              rect1.left > rect2.right ||
+              rect1.bottom < rect2.top ||
+              rect1.top > rect2.bottom)) {
+            combineObjects();
+        }
+    }
+
+    function combineObjects() {
+        // Hier kannst du definieren, wie die Objekte kombiniert werden sollen
+        obj1.style.backgroundColor = 'purple'; // Beispiel: Farbe ändern
+        obj2.style.display = 'none'; // Beispiel: Zweites Objekt verstecken
+    }
+
+    obj1.addEventListener('mousedown', onMouseDown);
+    obj2.addEventListener('mousedown', onMouseDown);
+</script>
+
+</body>
+</html>
