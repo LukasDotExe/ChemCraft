@@ -6,6 +6,7 @@ $(function() {
 
         var px = 5;
         var py = 5;
+        var zi = 0;
 
         function posx(){
             px = px + 13;
@@ -16,6 +17,10 @@ $(function() {
         }
         function posy(){
             py = py + 20;
+        }
+
+        function zIndex(){
+            zi++;
         }
 
         elements.forEach(element => {
@@ -40,6 +45,9 @@ $(function() {
             container.addEventListener('mousemove', onMouseMove);
             container.addEventListener('mouseup', onMouseUp);
             activeElement.classList.add("dragging");
+            zIndex();
+            activeElement.style.zIndex = zi;
+
         }
 
         function onMouseMove(e) {
