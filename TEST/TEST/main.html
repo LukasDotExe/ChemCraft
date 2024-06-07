@@ -12,17 +12,19 @@
         }
         .draggable {
             width: 100px;
-            height: 100px;
+            height: 125px;
             position: absolute;
             cursor: pointer;
         }
         #obj1 {
-            background-color: red;
+            background-image: url("Na.png");
+            background-size: cover;
             top: 50px;
             left: 50px;
         }
         #obj2 {
-            background-color: blue;
+            background-image: url("Cl.png");
+            background-size: cover;
             top: 200px;
             left: 200px;
         }
@@ -32,8 +34,8 @@
 <body>
 
 <div id="container">
-    <div id="obj1" class="draggable">Na</div>
-    <div id="obj2" class="draggable">Cl</div>
+    <div id="obj1" class="draggable"></div>
+    <div id="obj2" class="draggable"></div>
 </div>
 
 <script>
@@ -79,6 +81,10 @@
     function combineObjects() {
         // Hier kannst du definieren, wie die Objekte kombiniert werden sollen
         obj1.style.backgroundColor = 'purple'; // Beispiel: Farbe ändern
+        obj1.style.backgroundImage = 'none';
+        obj1.style.height = '50px';
+        obj1.append("NaCl");
+        obj1.style.color = 'white'
         obj2.style.display = 'none'; // Beispiel: Zweites Objekt verstecken
     }
 
