@@ -199,3 +199,9 @@ button {
   border: 0px;
   background: #00000088;
 }
+
+.body-about{
+  text: #ffffff ;
+  margin: auto 20%;
+  background: #7692ec ;
+}
