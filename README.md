@@ -1,6 +1,6 @@
 Read Me!
 
-ich bin ein projekt für die Schule
+Ich bin ein projekt für die Schule
 
 Ich werde von drei Entwicklern in der Schule entwickelt.
 
