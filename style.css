@@ -201,11 +201,18 @@ button {
 }
 
 .body-about{
-  color: #ffffff ;
+  background-color: #d4d4f0 ;
   margin: auto 20%;
-  background: #7692ec ;
+  border: 20% #ffffff;
+  color: #ffffff;
+}
+
+.body-about h1{
+  color: #000000;
 }
 
 .about{
-  margin: 50px;
+  background: #7692ec ;
+  height: 83.5vh;
+  padding: 20px;
 }
