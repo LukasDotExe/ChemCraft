@@ -20,13 +20,9 @@ $(function() {
                 posy();
             }
         }
-        function posy(){
-            py = py + 20;
-        }
+        function posy(){py = py + 20;}
 
-        function zIndex(){
-            zi++;
-        }
+        function zIndex(){zi++;}
 
         elements.forEach(element => {
             element.addEventListener('click', () => {
