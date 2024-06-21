@@ -20,7 +20,12 @@ $(function() {
                 posy();
             }
         }
-        function posy(){py = py + 20;}
+        function posy(){
+            py = py + 20;
+            if(py > 60) {
+                rstPos();
+            }
+        }
 
         function zIndex(){zi++;}
 
@@ -48,7 +53,6 @@ $(function() {
             activeElement.classList.add("dragging");
             zIndex();
             activeElement.style.zIndex = zi;
-
         }
 
         function onMouseMove(e) {

@@ -160,16 +160,13 @@ button {
   /*border: 3px solid #000000;*/
 }
 
-#back{
+.back{
+  height: 50px;
+  width: 393px;
   position: absolute;
   top: 0px;
   left: 0px;
   margin: 15px;
-}
-
-.back{
-  height: 50px;
-  width: 393px;
 }
 
 .bottom{
